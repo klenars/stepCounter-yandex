@@ -17,7 +17,7 @@ public class StepTracker {
 	
 	public void setStepsPoint(int point) {
 		if (point < 0) {
-			System.out.println("Êîëè÷åñòâî øàãîâ äîëæíî áûòü íå ìåíüøå íóëÿ!");
+			System.out.println("ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÐ°Ð³Ð¾Ð² Ð´Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð½Ðµ Ð¼ÐµÐ½ÑŒÑˆÐµ Ð½ÑƒÐ»Ñ!");
 		}
 		else {
 			monthStepsPoint = point;
@@ -28,11 +28,11 @@ public class StepTracker {
 		MonthData monthData = monthToData.get(month);
 		monthData.stepsPerDay();
 		int sumSteps = monthData.sumStepsPerMonth();
-		System.out.println("Ñóììà øàãîâ â ìåñÿöå " + monthData.getMonthName() + ": " + sumSteps);
+		System.out.println("Ð¡ÑƒÐ¼Ð¼Ð° ÑˆÐ°Ð³Ð¾Ð² Ð² Ð¼ÐµÑÑÑ†Ðµ " + monthData.getMonthName() + ": " + sumSteps);
 		monthData.maxStepsInMonth();
 		monthData.avgSteps();
-		System.out.println("Îáùàÿ ïðîéäåííàÿ äèñòàíöèÿ: " + converter.getDistance(sumSteps) + " êì.");
-		System.out.println("Âñåãî ïîòðà÷åíî: " + converter.getKcal(sumSteps) + " êèëîêàëîðèé.");
+		System.out.println("ÐžÐ±Ñ‰Ð°Ñ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ð½Ð°Ñ Ð´Ð¸ÑÑ‚Ð°Ð½Ñ†Ð¸Ñ: " + converter.getDistance(sumSteps) + " ÐºÐ¼.");
+		System.out.println("Ð’ÑÐµÐ³Ð¾ Ð¿Ð¾Ñ‚Ñ€Ð°Ñ‡ÐµÐ½Ð¾: " + converter.getKcal(sumSteps) + " ÐºÐ¸Ð»Ð¾ÐºÐ°Ð»Ð¾Ñ€Ð¸Ð¹.");
 		monthData.bestStepsLine();		
 	}
 }

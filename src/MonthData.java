@@ -9,15 +9,15 @@ public class MonthData {
 	}
 	
 	public String getMonthName() {
-		String[] months = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-						   "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
+		String[] months = {"РЇРЅРІР°СЂСЊ", "Р¤РµРІСЂР°Р»СЊ", "РњР°СЂС‚", "РђРїСЂРµР»СЊ", "РњР°Р№", "РСЋРЅСЊ",
+						   "РСЋР»СЊ", "РђРІРіСѓСЃС‚", "РЎРµРЅС‚СЏР±СЂСЊ", "РћРєС‚СЏР±СЂСЊ", "РќРѕСЏР±СЂСЊ", "Р”РµРєР°Р±СЂСЊ"};
 		
 		return months[numberOfMonth - 1];
 	}
 	
 	public void addSteps(int day, int steps) {
 		if (steps < 0) {
-			System.out.println("Количество шагов должно быть не меньше нуля!");
+			System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РЅРµ РјРµРЅСЊС€Рµ РЅСѓР»СЏ!");
 		}
 		else {
 			monthSteps[day - 1] = steps;
@@ -26,7 +26,7 @@ public class MonthData {
 	
 	public void stepsPerDay() {
 		for (int i = 0; i < monthSteps.length; i++) {
-			System.out.println((i + 1) + " день: " + monthSteps[i]);
+			System.out.println((i + 1) + " РґРµРЅСЊ: " + monthSteps[i]);
 		}
 	}
 	
@@ -45,28 +45,27 @@ public class MonthData {
 				maxSteps = steps;
 			}
 		}
-		System.out.println("Максимальное количество шагов пройденное за день в этом месяце: " + maxSteps);
+		System.out.println("РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ РїСЂРѕР№РґРµРЅРЅРѕРµ Р·Р° РґРµРЅСЊ РІ СЌС‚РѕРј РјРµСЃСЏС†Рµ: " + maxSteps);
 	}
 	
 	public void avgSteps() {
-		System.out.println("Среднее количество шагов в этом месяце: " + (sumStepsPerMonth() / 30));
+		System.out.println("РЎСЂРµРґРЅРµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ РІ СЌС‚РѕРј РјРµСЃСЏС†Рµ: " + (sumStepsPerMonth() / 30));
 	}
 	
 	public void bestStepsLine() {
 		int bestLine = 0;
 		int countLine = 0;
-		for (int i = 0; i < monthSteps.length; i++) {
-			if (monthSteps[i] >= StepTracker.monthStepsPoint) {
+		for (int monthStep : monthSteps) {
+			if (monthStep >= StepTracker.monthStepsPoint) {
 				countLine++;
 				if (countLine > bestLine) {
 					bestLine = countLine;
 				}
-			}
-			else {
+			} else {
 				countLine = 0;
 			}
 		}
-		System.out.println("Лучшая серия дней по выполнению плана по шагам: " + bestLine);
+		System.out.println("Р›СѓС‡С€Р°СЏ СЃРµСЂРёСЏ РґРЅРµР№ РїРѕ РІС‹РїРѕР»РЅРµРЅРёСЋ РїР»Р°РЅР° РїРѕ С€Р°РіР°Рј: " + bestLine);
 	}
 }
 

@@ -8,12 +8,12 @@ public class Main {
         
 
         while (true) {
-            System.out.println("Вам доступны следующие команды:\n" +
-                    "1. Ввести количество шагов за определённый день.\n" +
-                    "2. Напечатать статистику за определённый месяц.\n" +
-                    "3. Изменить цель по количеству шагов в день.\n" +
-                    "0. Выйти из приложения.\n" +
-                    "Введите номер команды:");
+            System.out.println("Р’Р°Рј РґРѕСЃС‚СѓРїРЅС‹ СЃР»РµРґСѓСЋС‰РёРµ РєРѕРјР°РЅРґС‹:\n" +
+                    "1. Р’РІРµСЃС‚Рё РєРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ Р·Р° РѕРїСЂРµРґРµР»С‘РЅРЅС‹Р№ РґРµРЅСЊ.\n" +
+                    "2. РќР°РїРµС‡Р°С‚Р°С‚СЊ СЃС‚Р°С‚РёСЃС‚РёРєСѓ Р·Р° РѕРїСЂРµРґРµР»С‘РЅРЅС‹Р№ РјРµСЃСЏС†.\n" +
+                    "3. РР·РјРµРЅРёС‚СЊ С†РµР»СЊ РїРѕ РєРѕР»РёС‡РµСЃС‚РІСѓ С€Р°РіРѕРІ РІ РґРµРЅСЊ.\n" +
+                    "0. Р’С‹Р№С‚Рё РёР· РїСЂРёР»РѕР¶РµРЅРёСЏ.\n" +
+                    "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РєРѕРјР°РЅРґС‹:");
 
             int command = scanner.nextInt();
 
@@ -21,28 +21,28 @@ public class Main {
                 break;
             }
             else if (command == 1) {
-            	System.out.println("Введите номер месяца:");
+            	System.out.println("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РјРµСЃСЏС†Р°:");
             	int month = scanner.nextInt();
-            	System.out.println("Введите день:");
+            	System.out.println("Р’РІРµРґРёС‚Рµ РґРµРЅСЊ:");
             	int day = scanner.nextInt();
-            	System.out.println("Введите количество шагов:");
+            	System.out.println("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ:");
             	int steps = scanner.nextInt();
             	stepTracker.setDaySteps(month, day, steps);         
             	System.out.println();
             }
             else if (command == 2) {
-            	System.out.println("Введите номер месяца по которому нужна статистика:");
+            	System.out.println("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РјРµСЃСЏС†Р° РїРѕ РєРѕС‚РѕСЂРѕРјСѓ РЅСѓР¶РЅР° СЃС‚Р°С‚РёСЃС‚РёРєР°:");
             	int month = scanner.nextInt();
             	stepTracker.printStatistic(month);
             	System.out.println();
             }
             else if (command == 3) {
-            	System.out.println("Введите новую цель по шагам");
+            	System.out.println("Р’РІРµРґРёС‚Рµ РЅРѕРІСѓСЋ С†РµР»СЊ РїРѕ С€Р°РіР°Рј");
             	int point = scanner.nextInt();
             	stepTracker.setStepsPoint(point);
             	System.out.println();
             }
-            else System.out.println("Такой команды нет. Введите номер команды из списка\n");
+            else System.out.println("РўР°РєРѕР№ РєРѕРјР°РЅРґС‹ РЅРµС‚. Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РєРѕРјР°РЅРґС‹ РёР· СЃРїРёСЃРєР°\n");
             System.out.println();
         }
         scanner.close();
